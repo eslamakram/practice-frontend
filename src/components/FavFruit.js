@@ -70,11 +70,12 @@ import UpadteFruit from './UpadteFruit';
         let url=`https://test-entrance401.herokuapp.com/updateFav/${this.state.selectedFruitUpdate._id}`;
         axios.put(url,reqBody).then(result =>{
               this.setState({
-                favFruit:result.data,
-                selectedFruitUpdate: {}
-            })
-            this.handelDisplayUpdateModal();
-        }).catch(error =>{
+                FavData:result.data,
+                selectedFruitUpdate: {},
+                showUpdateModal: !this.state.showUpdateModal
+
+            });
+                   }).catch(error =>{
             console.log(error)
         })
     }
@@ -83,7 +84,7 @@ import UpadteFruit from './UpadteFruit';
         return (
             <div>
                 <h1>My favoirate  Fruits</h1>
-                <FavCard favFruit={this.state.FavData} 
+                <FavCard FavData={this.state.FavData} 
                          deleteFav={this.deleteFav}
                          handelDisplayUpdateModal={this.handelDisplayUpdateModal}
                          handelUpdateModal={this.handelUpdateModal}/>

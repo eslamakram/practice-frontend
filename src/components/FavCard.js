@@ -8,7 +8,7 @@ export class FavCard extends Component {
             <div>
                 <Row xs={1} md={3}>
 
-                    {this.props.favFruit.map(fruit => {
+                    {this.props.FavData.map(fruit => {
                         return <Col>
                             <Card style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={fruit.image} alt={'fruit'} style={{ width: '15rem' }} />
