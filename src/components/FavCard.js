@@ -17,7 +17,7 @@ export class FavCard extends Component {
                                     <Card.Text>
                                         Price: {fruit.price}
                                     </Card.Text>
-                                    <Button variant="warning" onClick={() => { this.props.updateFav(fruit) }}>Update Fruit Info</Button>
+                                    <Button variant="warning" onClick={() => { this.props.handelDisplayUpdateModal(fruit) }}>Update Fruit Info</Button>
                                     <Button variant="danger" onClick={() => { this.props.deleteFav(fruit._id) }}>Delete From Fav</Button>
                                 </Card.Body>
                             </Card>
