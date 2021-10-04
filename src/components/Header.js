@@ -12,7 +12,8 @@ export class Header extends Component {
    const { isAuthenticated } = this.props.auth0;
     return (
       <>
-      <Navbar collapseOnSelect expand="lg" bg="light">
+      
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand >My Fav Fruits</Navbar.Brand>
       <Link to='/'>Home</Link>
       <Link to='/FavFruit'>Fav Fruits</Link>

@@ -25,13 +25,39 @@ export class Home extends Component {
 
     }
 
+
+    addtoFav=(name, img, price)=>{
+        let url= 'https://test-entrance401.herokuapp.com/addtoFav'
+        const {user} = this.props.auth0;
+        const email = user.email;
+
+        const obj={
+            name: name,
+            image:img,
+            price:price,
+            email:email
+        };
+
+        axios.post(url,obj).then(result =>{
+            this.setState({
+                favFruit: result.data})
+                console.log(this.state.favFruit);
+        }).catch(error =>{
+            console.log('something went error');
+            alert(error.message);
+        })
+
+
+
+    }
+
     render() {
         return (
             <div>
 
 
                 {this.state.fruitsData.length ?
-                    <FruitCard fruitsData={this.state.fruitsData} />
+                    <FruitCard fruitsData={this.state.fruitsData} addtoFav={this.addtoFav} />
                     :
                     <h4>No fruits Found </h4>}
 
